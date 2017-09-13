@@ -4,5 +4,12 @@
 - name: clone acuo-devops rep
   git: 
     repo: https://github.com/anaxo-io/acuo-devops.git
-    dest: /home/ubuntu/projects/acuo-devops
+    dest: /home/ubuntu/projects
     version: develop
+
+- name: copy deploy script
+  file: src=deploy.sh dest=/home/ubuntu/projects state=present
+
+- name: deploy using docker compose
+  command: /home/ubuntu/projects/deploy.sh valuation
+  register: myoutput
