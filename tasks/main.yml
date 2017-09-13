@@ -6,9 +6,11 @@
     repo: https://github.com/anaxo-io/acuo-devops.git
     dest: /home/ubuntu/projects
     version: develop
+    update: yes
+    clone: no
 
 - name: copy deploy script
-  file: src=deploy.sh dest=/home/ubuntu/projects state=present
+  copy: src=deploy.sh dest=/home/ubuntu/projects/deploy.sh mode=0755
 
 - name: deploy using docker compose
   command: /home/ubuntu/projects/deploy.sh valuation
