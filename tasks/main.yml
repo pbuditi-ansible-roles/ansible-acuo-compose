@@ -5,7 +5,7 @@
   git: 
     repo: https://github.com/anaxo-io/acuo-devops.git
     dest: /home/ubuntu/projects
-    version: develop
+    version: {{ app_branch }}
     update: yes
     clone: no
 
