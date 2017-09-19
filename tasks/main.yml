@@ -13,5 +13,5 @@
   copy: src=deploy.sh dest=/home/ubuntu/projects/deploy.sh mode=0755
 
 - name: deploy using docker compose
-  command: /home/ubuntu/projects/deploy.sh valuation
+  command: /home/ubuntu/projects/deploy.sh "{{ app_name }}"
   register: myoutput
